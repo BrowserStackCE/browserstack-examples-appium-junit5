@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 @ExtendWith({ScreenshotListener.class, BrowserstackTestStatusListener.class})
 public class TestBase {
     private static final String PATH_TO_TEST_CAPS_JSON = "src/test/resources/conf/capabilities/test_caps.json";
-    private static final String BROWSERSTACK_HUB_URL = "hub-cloud.browserstack.com";
+    private static final String BROWSERSTACK_HUB_URL = "https://hub-cloud.browserstack.com/wd/hub";
     private static final long TIMESTAMP = (new Date()).getTime();
     private static final String appLocation = FileSystems.getDefault().getPath(System.getProperty("user.dir"), "/src/test/resources/app").toString();
     public AppiumDriver<?> driver;
@@ -79,12 +79,12 @@ public class TestBase {
                 caps.merge(new DesiredCapabilities(localCapabilities));
             }
 
-            String username = getUsername(testCapsConfig);
-            String accessKey = getAccessKey(testCapsConfig);
+            caps.setCapability("browserstack.user", getUsername(testCapsConfig));
+            caps.setCapability("browserstack.key", getAccessKey(testCapsConfig));
 
             createSecureTunnelIfNeeded(caps, testCapsConfig);
             try {
-                driver = new AppiumDriver(new URL("https://" + username + ":" + accessKey + "@" + BROWSERSTACK_HUB_URL + "/wd/hub"), caps);
+                driver = new AppiumDriver(new URL(BROWSERSTACK_HUB_URL), caps);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }

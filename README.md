@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Welcome to BrowserStack JUnit 5 Examples, a sample UI testing framework empowered with [Appium](https://appium.io/) and [JUnit 5](https://junit.org/JUnit 5/). Along with the framework the repository also contains a collection of sample test scripts written for BrowserStack Demo Mobile App.
+Welcome to BrowserStack JUnit 5 Examples, a sample UI testing framework empowered with [Appium](https://appium.io/) and [JUnit 5](https://junit.org/junit5/). Along with the framework the repository also contains a collection of sample test scripts written for BrowserStack Demo Mobile App.
 
 This BrowserStack Example repository demonstrates an Appium test framework written in JUnit 5 with parallel testing capabilities. The Appium test scripts are written for the open source [BrowserStack Demo Mobile App](https://www.dropbox.com/sh/uh34wumb9rsck5i/AAB-rhZwXWt408VcSm_M1bNIa?dl=0). This BrowserStack Demo Mobile App is an e-commerce mobile application which showcases multiple real-world user scenarios. The app is bundled with offers data, orders data and products data that contains everything you need to start using the app and run tests out-of-the-box.
 
